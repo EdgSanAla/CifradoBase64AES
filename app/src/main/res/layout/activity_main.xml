@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:layout_margin="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <RadioButton
+                    android:id="@+id/radio_cifrado"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Cifrado"
+                    android:checked="true"
+                    android:onClick="onRadioButtonClicked"/>
+                <RadioButton
+                    android:id="@+id/radio_descifrado"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="Descifrado"
+                    android:onClick="onRadioButtonClicked"/>
+
+            </RadioGroup>
+
+            <RelativeLayout
+                android:id="@+id/relative_base64"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_titulo_base64"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cifrado Base64"
+                    android:textSize="32sp"
+                    android:textAlignment="center"/>
+
+                <EditText
+                    android:id="@+id/edittext_base64"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Introduce texto"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_below="@id/txt_titulo_base64"/>
+                <Button
+                    android:id="@+id/btn_base64"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cifrar"
+                    android:layout_below="@id/edittext_base64"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/txt_output_base64"
+                    android:layout_below="@+id/btn_base64"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lines="5"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/btn_copy_base64"
+                    android:textSize="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <ImageView
+                    android:id="@+id/btn_copy_base64"
+                    android:layout_width="24dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/content_copy"
+                    android:layout_alignTop="@id/txt_output_base64"
+                    android:layout_alignBottom="@id/txt_output_base64"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative_aes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txt_titulo_aes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cifrado AES"
+                    android:textSize="32sp"
+                    android:textAlignment="center"/>
+
+                <EditText
+                    android:id="@+id/edittext_aes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Introduce texto"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_below="@id/txt_titulo_aes"/>
+                <Button
+                    android:id="@+id/btn_aes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cifrar"
+                    android:layout_below="@id/edittext_aes"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <TextView
+                    android:id="@+id/txt_output_aes"
+                    android:layout_below="@+id/btn_aes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lines="3"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/btn_copy_aes"
+                    android:textSize="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <ImageView
+                    android:id="@+id/btn_copy_aes"
+                    android:layout_width="24dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/content_copy"
+                    android:layout_alignTop="@id/txt_output_aes"
+                    android:layout_alignBottom="@id/txt_output_aes"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
